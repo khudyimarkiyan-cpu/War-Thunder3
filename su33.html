@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Су-33</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .tabcontent { display: none; padding: 10px; }
+        .tabcontent.active { display: block; }
+        .menu { display: flex; flex-direction: column; height: auto; }
+        .btn { cursor: pointer; }
+    </style>
+</head>
+<body>
+    <a href="planes.html" class="back">Назад</a>
+
+    <div class="menu">
+        <button class="btn" onclick="showTab('info')">Характеристики</button>
+        <button class="btn" onclick="showTab('history')">Історія</button>
+        <button class="btn" onclick="showTab('armament')">Озброєння</button>
+    </div>
+
+    <div id="info" class="tabcontent active">
+        <h1>Характеристики Су-33</h1>
+        <p>Максимальна швидкість: ~2300 км/год</p>
+        <p>Дальність польоту: ~3000 км</p>
+    </div>
+
+    <div id="history" class="tabcontent">
+        <h1>Історія Су-33</h1>
+        <p>Палубний винищувач, створений на базі Су-27 для авіаносців.</p>
+    </div>
+
+    <div id="armament" class="tabcontent">
+        <h1>Озброєння Су-33</h1>
+        <p>Ракети повітря-повітря, авіаційна гармата, бомби.</p>
+    </div>
+
+    <script>
+        function showTab(id) {
+            let tabs = document.querySelectorAll('.tabcontent');
+            tabs.forEach(t => t.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+        }
+    </script>
+</body>
+</html>
